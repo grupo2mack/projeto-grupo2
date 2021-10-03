@@ -1,0 +1,83 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" 
+                access="global"
+                controller="CalendarioController">
+    <aura:attribute name="listaSaude" type="List"/>
+    <aura:attribute name="date" type="String"/>
+    <aura:handler name="init" action="{!c.init}" value="{!this}"/>
+    <div class="slds-box background">
+        
+        <div class="slds-m-top_xx-large">
+            <h2 class="header">Escolha do dia que quer ver os dados</h2>
+            <lightning:input type="date" name="input5" value="{!v.date}" min="2021-01-03T00:00:00Z" max="2021-12-31T00:00:00Z" />
+        </div>
+        <lightning:button class="slds-m-top_xx-large" variant="brand" label="Pesquisar" title="Brand action" onclick="{! c.getSaude }" />
+        
+        
+        
+        <div class="slds-grid slds-grid_vertical slds-m-top_medium">
+            <aura:iteration items="{!v.listaSaude}" var="item">
+                <div class="slds-col">
+                    <span class="font">Calafrio: </span> {!item.Calafrios__c}
+                </div>
+                <hr></hr>
+                <div class="slds-col">
+                    <span class="font">Cansaço: </span>{!item.Cansaco__c}
+                    
+                </div>
+                <hr></hr>
+                <div class="slds-col">
+                    <span class="font">Coriza: </span>{!item.Coriza__c}
+                </div>
+                <hr></hr>
+                <div class="slds-col">
+                    <span class="font"> Diarreia: </span> {!item.Diarreia__c}
+                </div>
+                <hr></hr>
+                <div class="slds-col">
+                    <span class="font">Dores musculares: </span>{!item.Dores_musculares__c}
+                    
+                </div>
+                <hr></hr>
+                <div class="slds-col">
+                    <span class="font">Dor de cabeça: </span>{!item.Dor_de_cabeca__c}
+                </div>
+                <hr></hr>
+                <div class="slds-col">
+                    <span class="font"> Dor de garganta: </span> {!item.Dor_de_garganta__c}
+                </div>
+                <hr></hr>
+                <div class="slds-col">
+                    <span class="font">Dor no peito: </span>{!item.Dor_no_peito__c}
+                    
+                </div>
+                <hr></hr>
+                <div class="slds-col">
+                    <span class="font">Espirros: </span>{!item.Espirros__c}
+                </div>
+                <hr></hr>
+                <div class="slds-col">
+                    <span class="font">Falta de ar: </span> {!item.Falta_de_ar__c}
+                </div>
+                <hr></hr>
+                <div class="slds-col">
+                    <span class="font">Febre: </span>{!item.Febre__c}
+                    
+                </div>
+                <hr></hr>
+                <div class="slds-col">
+                    <span class="font">Perda de olfato: </span>{!item.Perda_de_olfato__c}
+                </div>
+                <hr></hr>
+                <div class="slds-col">
+                    <span class="font"> Perda de paladar: </span> {!item.Perda_de_paladar__c}
+                </div>
+                <hr></hr>
+                <div class="slds-col">
+                    <span class="font">Tosse: </span>{!item.Tosse__c}
+                </div>
+                <hr></hr>
+            </aura:iteration>
+            
+        </div>
+    </div>
+</aura:component>
